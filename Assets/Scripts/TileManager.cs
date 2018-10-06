@@ -12,16 +12,19 @@ public class TileManager : MonoBehaviour {
     private float spawnZ = 10.0f;
     private float tileLength = 10f;
     private int lastPrefabIndex = 0;
+    private float safeZone = 15f; //safe zone before deleting tiles
+
+    private List<GameObject> activeTiles;
 
 	// Use this for initialization
 	void Start ()
     {
+        activeTiles = new List<GameObject>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
         for(int i = 0; i < amountOfTiles; i++)
         {
             SpawnTile(0);
-            SpawnTile();
         }
     }
 	
@@ -29,7 +32,7 @@ public class TileManager : MonoBehaviour {
 	void Update ()
     {
         // Logic to spawn tiles as player goes
-		if(playerTransform.position.z > (spawnZ - amountOfTiles * tileLength))
+		if(playerTransform.position.z - safeZone > (spawnZ - amountOfTiles * tileLength))
         {
             SpawnTile();
             DeleteTile();
@@ -46,12 +49,15 @@ public class TileManager : MonoBehaviour {
         go.transform.SetParent(transform);
         go.transform.position = Vector3.forward * spawnZ;
         spawnZ += tileLength;
+        activeTiles.Add(go);
     }
 
 
     void DeleteTile()
     {
         //Logic to delete old tiles
+        Destroy(activeTiles[0]);
+        activeTiles.RemoveAt(0);
     }
 
 
