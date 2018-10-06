@@ -2,20 +2,18 @@
 
 public class FollowPlayer : MonoBehaviour {
 
-    Vector3 offset;
+    public Vector3 offset = new Vector3(0, 9, -9);
     public Transform playerToFollow;
-    public float smoothing = 5;
 
-    // Use this for initialization
-    void Start()
-    {
-        offset = transform.position - playerToFollow.position;
-    }
+	// Use this for initialization
+	void Start () {
+        
+	}
+	
+	// Update is called once per frame
+	void Update () {
 
-    // Waits for physics to be called before updating the frame
-    void FixedUpdate()
-    {
-        Vector3 targetCamPos = playerToFollow.position + offset;
-        transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
-    }
+        this.transform.position = new Vector3(transform.position.x, playerToFollow.position.y,playerToFollow.position.z) + offset;
+	}
 }
+
