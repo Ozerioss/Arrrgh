@@ -9,8 +9,10 @@ public class CollisionDetection : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag.Equals("Obstacle"))
-        {            
-            FindObjectOfType<GameManager>().GameOver();
+        {
+            Debug.Log("Obstacle");
+            Destroy(collision.gameObject);
+            //FindObjectOfType<GameManager>().GameOver();
             //movement.horizontalForce = 1000;
         }
     }
