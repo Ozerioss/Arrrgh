@@ -6,7 +6,7 @@ public class Buff : MonoBehaviour {
 
     public GameObject pickupEffect;
 
-    public float multiplier = 1.3f;
+    public float multiplier = 1.1f;
 
     private void OnTriggerEnter(Collider other)
     {
