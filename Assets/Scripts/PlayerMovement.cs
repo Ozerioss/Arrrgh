@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-{
-    //modif
+{    
     Rigidbody rb;
     KeyCode moveLeft;
     KeyCode moveRight;
@@ -19,7 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    {
+    {        
+        //Initializing keys
         moveLeft = KeyCode.LeftArrow;
         moveRight = KeyCode.RightArrow;
         rb = GetComponent<Rigidbody>();
