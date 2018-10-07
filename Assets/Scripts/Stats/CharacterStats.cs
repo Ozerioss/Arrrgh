@@ -8,6 +8,7 @@ public class CharacterStats : MonoBehaviour {
     public int currentHealth { get; private set; } // get from all classes but set only from here
     public int currentShield { get; private set; }
 
+    public Health hp;
     public Stat maxHealth;
     public Stat maxShield;
 
@@ -38,7 +39,7 @@ public class CharacterStats : MonoBehaviour {
         damage = Mathf.Clamp(damage, 0, int.MaxValue); // so that damage is never negative*/
 
         currentHealth -= damage;
-
+        hp.currentHealth = currentHealth;
         if(currentHealth <= 0)
         {
             Die();

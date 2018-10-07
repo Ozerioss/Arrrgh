@@ -16,6 +16,12 @@ public class GameManager : MonoBehaviour {
         completeLevelUI.SetActive(true);
     }
 
+    public void EndLevel(){
+        //TODO : change this later
+        completeLevelUI.transform.Find(finalScoreTxtName).GetComponent<Text>().text = FindObjectOfType<Score>().ScoreValue.text;
+        completeLevelUI.SetActive(true);
+    }
+
     public void GameOver() {
         if (!gameEnded) {
             gameEnded = true;
