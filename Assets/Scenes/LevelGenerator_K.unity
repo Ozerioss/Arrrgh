@@ -249,6 +249,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1534995464673628, guid: 1da8ffb2d6d06744ab8c58799626fa31,
     type: 2}
   m_PrefabInternal: {fileID: 890798476}
+--- !u!114 &216568408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 216568407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da40e09cbb10590418a47695f76be523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 0
+  maxShield:
+    baseValue: 0
+  damage:
+    baseValue: 0
+  armor:
+    baseValue: 0
 --- !u!114 &216568411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 5
   maxHealth: 5
+  HeartContainer: {fileID: 0}
   hearths:
   - {fileID: 910778839}
   - {fileID: 1582003883}
@@ -270,6 +290,7 @@ MonoBehaviour:
   - {fileID: 204119837}
   emptyHearth: {fileID: 21300000, guid: 350f2e489c1d0458db18e969f67cb28a, type: 3}
   fullHearth: {fileID: 21300000, guid: 51cbf6e0aefa3464ba1c716d3be413aa, type: 3}
+  healthPrefab: {fileID: 0}
 --- !u!224 &672037278 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224531525107820030, guid: c23df1e1fe1e14d41a5356be0a6fec55,
@@ -473,6 +494,11 @@ Prefab:
       propertyPath: sideSpeed
       value: 700
       objectReference: {fileID: 0}
+    - target: {fileID: 114422039092656634, guid: 1da8ffb2d6d06744ab8c58799626fa31,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 216568408}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da8ffb2d6d06744ab8c58799626fa31, type: 2}
   m_IsPrefabAsset: 0
