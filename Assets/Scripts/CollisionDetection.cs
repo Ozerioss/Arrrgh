@@ -5,28 +5,26 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour {
 
     public PlayerMovement playerMovement;
+    Health health;
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag.Equals("Obstacle"))
-        {
+    void OnCollisionEnter(Collision collision) {
+        if (collision.collider.tag.Equals("Obstacle")) {
             Debug.Log("Obstacle");
+            health.currentHealth--;
             Destroy(collision.gameObject);
             //FindObjectOfType<GameManager>().GameOver();
             //movement.horizontalForce = 1000;
         }
     }
 
-
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Start() {
+        health = GetComponent<Health>();
+    }
 
-    
+    // Update is called once per frame
+    void Update() {
+
+    }
+
 }

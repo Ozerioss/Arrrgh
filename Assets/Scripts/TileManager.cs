@@ -41,7 +41,7 @@ public class TileManager : MonoBehaviour {
         GameObject go;
         int newIndex = RandomPrefabIndex(); // get random index
 
-        go = Instantiate(tilePrefabs[newIndex]) as GameObject; //Instantiate random tile from list
+        go = Instantiate(tilePrefabs[newIndex]) as GameObject; //Instantiate random tile from list        
 
         go.transform.SetParent(transform);
         go.transform.position = Vector3.forward * spawnZ;
