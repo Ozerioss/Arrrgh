@@ -5,13 +5,18 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour {
 
     public PlayerMovement playerMovement;
+<<<<<<< HEAD
     Health health;
+=======
+    public PlayerStats stats;
+>>>>>>> fb3d5b722dcd543d3bfbe5899110dd57a1774f9f
 
     void OnCollisionEnter(Collision collision) {
         if (collision.collider.tag.Equals("Obstacle")) {
             Debug.Log("Obstacle");
             health.currentHealth--;
             Destroy(collision.gameObject);
+            stats.TakeDamage(40);
             //FindObjectOfType<GameManager>().GameOver();
             //movement.horizontalForce = 1000;
         }

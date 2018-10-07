@@ -262,7 +262,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 5
   maxHealth: 5
-  HeartContainer: {fileID: 1432277302}
   hearths:
   - {fileID: 910778839}
   - {fileID: 1582003883}
@@ -271,7 +270,6 @@ MonoBehaviour:
   - {fileID: 204119837}
   emptyHearth: {fileID: 21300000, guid: 350f2e489c1d0458db18e969f67cb28a, type: 3}
   fullHearth: {fileID: 21300000, guid: 51cbf6e0aefa3464ba1c716d3be413aa, type: 3}
-  healthPrefab: {fileID: 0}
 --- !u!224 &672037278 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224531525107820030, guid: c23df1e1fe1e14d41a5356be0a6fec55,
