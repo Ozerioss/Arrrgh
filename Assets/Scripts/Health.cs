@@ -8,9 +8,15 @@ public class Health : MonoBehaviour {
 	public int currentHealth;
 	public int maxHealth;
 
+	public GameObject HeartContainer;
 	public Image[] hearths;
 	public Sprite emptyHearth;
 	public Sprite fullHearth;
+	public Image healthPrefab;
+
+	void Start() {
+				
+	}
 
 	void Update() {
 		for (int i = 0; i < hearths.Length; i++) {
