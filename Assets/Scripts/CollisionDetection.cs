@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour {
 
     public PlayerMovement playerMovement;
+    public PlayerStats stats;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -12,6 +13,7 @@ public class CollisionDetection : MonoBehaviour {
         {
             Debug.Log("Obstacle");
             Destroy(collision.gameObject);
+            stats.TakeDamage(20);
             //FindObjectOfType<GameManager>().GameOver();
             //movement.horizontalForce = 1000;
         }

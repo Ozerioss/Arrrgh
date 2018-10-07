@@ -24,7 +24,14 @@ public class TileManager : MonoBehaviour {
 
         for(int i = 0; i < amountOfTiles; i++)
         {
-            SpawnTile(0);
+            if (i < 2)
+            {
+                SpawnTile(0);
+            }
+            else
+            {
+                SpawnTile();
+            }
         }
     }
 	
@@ -43,8 +50,14 @@ public class TileManager : MonoBehaviour {
     {
         GameObject go;
         int newIndex = RandomPrefabIndex(); // get random index
-
-        go = Instantiate(tilePrefabs[newIndex]) as GameObject; //Instantiate random tile from list
+        if(indexPrefab == -1)
+        {
+            go = Instantiate(tilePrefabs[newIndex]) as GameObject; //Instantiate random tile from list
+        }
+        else
+        {
+            go = Instantiate(tilePrefabs[indexPrefab]);
+        }
 
         go.transform.SetParent(transform);
         go.transform.position = Vector3.forward * spawnZ;
