@@ -44,8 +44,7 @@ public class PlayerMovement : MonoBehaviour
         //We also check for the lanes so as to stay in the defined lanes
         //Check if controls are not locks so that they do not interfer with each other unless the last action is finished      
         if ((Input.GetKeyDown(moveRight)) && (lane < 3) && (!controlLocked))
-        {
-            Debug.Log("Pressing D");
+        {            
             //Position we want to reach
             Vector3 newPos = rb.transform.position + Vector3.right * distance;
 
@@ -57,8 +56,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if ((Input.GetKeyDown(moveLeft)) && (lane > 1) && (!controlLocked))
-        {
-            Debug.Log("Pressing Q");
+        {            
             //Position we want to reach
             Vector3 newPos = rb.transform.position - Vector3.right * distance;
 
