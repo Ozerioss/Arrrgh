@@ -13,7 +13,7 @@ public class CollisionDetection : MonoBehaviour {
         {
             Debug.Log("Obstacle");
             Destroy(collision.gameObject);
-            stats.TakeDamage(20);
+            stats.TakeDamage(40);
             //FindObjectOfType<GameManager>().GameOver();
             //movement.horizontalForce = 1000;
         }
