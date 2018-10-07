@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     //The purpose of this variable is to lock the players movement until the last one is finished
     bool controlLocked = false;
     //This distance represents the step we move by sideways
-    public float distance = 2f;
+    public float distance = 1.5f;
     //Stores the X position of the last destination entered
     float lastDestinationX;
     Vector3 desiredVelocity;
@@ -104,6 +104,6 @@ public class PlayerMovement : MonoBehaviour
     /// <param name="threshold"></param>
     bool PositionIsReached(float threshold)
     {
-        return Vector3.Distance(Vector3.right * lastDestinationX, Vector3.right * rb.position.x) < threshold;
+        return Vector3.Distance(Vector3.right * lastDestinationX, Vector3.right * rb.position.x) <= threshold;
     }
 }

@@ -9,23 +9,17 @@ public class Buff : MonoBehaviour {
     public float multiplier = 1.1f;
     public int healAmount = 50;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")) {
             Pickup(other);
         }
-
-
     }
 
-    void Update()
-    {
+    void Update() {
         transform.Rotate(new Vector3(35, 0, 45) * Time.deltaTime);
     }
 
-    void Pickup(Collider player)
-    {
+    void Pickup(Collider player) {
         Debug.Log("Buff picked up");
         Instantiate(pickupEffect, transform.position, transform.rotation);
 

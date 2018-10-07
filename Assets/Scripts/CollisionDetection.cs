@@ -5,13 +5,13 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour {
 
     public PlayerMovement playerMovement;
+    Health health;
     public PlayerStats stats;
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag.Equals("Obstacle"))
-        {
+    void OnCollisionEnter(Collision collision) {
+        if (collision.collider.tag.Equals("Obstacle")) {
             Debug.Log("Obstacle");
+            health.currentHealth--;
             Destroy(collision.gameObject);
             stats.TakeDamage(40);
             //FindObjectOfType<GameManager>().GameOver();
@@ -19,16 +19,14 @@ public class CollisionDetection : MonoBehaviour {
         }
     }
 
-
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Start() {
+        health = GetComponent<Health>();
+    }
 
-    
+    // Update is called once per frame
+    void Update() {
+
+    }
+
 }
