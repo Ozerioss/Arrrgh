@@ -9,7 +9,7 @@ public class PlayerStats : CharacterStats {
     {
         base.Die();
         // Debug.Log("Player death");
-        gameManager.EndLevel();
+        gameManager.GameOver();
         Destroy(gameObject);
         //Death stuff
     }
