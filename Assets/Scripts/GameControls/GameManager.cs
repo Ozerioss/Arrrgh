@@ -32,19 +32,10 @@ public class GameManager : MonoBehaviour {
         int bestScoreSaved = PlayerPrefs.GetInt(bestScoreSaveName, 0);
         if(lastScoreSaved > bestScoreSaved)
             PlayerPrefs.SetInt(bestScoreSaveName, lastScoreSaved);
-
+        
         SceneManager.LoadScene(gameOverSceneName);
     }
 
-    // public void GameOver() {
-    //     if (!gameEnded) {
-    //         gameEnded = true;
-    //         lastScore = Convert.ToInt32(FindObjectOfType<Score>().ScoreValue.text);
-    //         Debug.Log("Over : " + lastScore);
-
-    //         Invoke("Restart", endDelay);
-    //     }
-    // }
 
     void Restart() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
