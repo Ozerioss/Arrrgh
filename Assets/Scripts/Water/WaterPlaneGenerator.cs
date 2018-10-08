@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WaterPlaneGenerator : MonoBehaviour {
 
-    public float size = 1f;
-    public int gridSize = 16;
+    public float size = 8f;
+    public int gridSize = 50;
 
     private MeshFilter filter;
 

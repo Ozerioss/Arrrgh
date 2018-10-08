@@ -5,9 +5,9 @@ using UnityEngine;
 public class NoiseGenerator : MonoBehaviour {
 
 
-    public float power = 3;
-    public float scale = 1;
-    public float timeScale = 1;
+    public float power = 1.5f;
+    public float scale = 1.4f;
+    public float timeScale = .5f;
 
 
     private float offsetX;

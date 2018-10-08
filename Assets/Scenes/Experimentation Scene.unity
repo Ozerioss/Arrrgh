@@ -345,7 +345,7 @@ Prefab:
     - target: {fileID: 114279809287028086, guid: 055a09a165462c14abef0e0266b3bb6a,
         type: 2}
       propertyPath: gridSize
-      value: 8
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114106984669525092, guid: 055a09a165462c14abef0e0266b3bb6a,
         type: 2}
@@ -366,6 +366,11 @@ Prefab:
         type: 2}
       propertyPath: scale
       value: 1.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 23903262017391520, guid: 055a09a165462c14abef0e0266b3bb6a,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 055a09a165462c14abef0e0266b3bb6a, type: 2}
