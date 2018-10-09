@@ -11,7 +11,7 @@ public class WaterPlaneGenerator : MonoBehaviour {
 
 	void Start () {
         filter = GetComponent<MeshFilter>();
-        filter.mesh = GenerateMesh();	
+        filter.mesh = GenerateMesh();
 	}
 
 

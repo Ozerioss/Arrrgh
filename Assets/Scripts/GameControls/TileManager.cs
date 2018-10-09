@@ -9,8 +9,8 @@ public class TileManager : MonoBehaviour {
 
 
     private Transform playerTransform;
-    private float spawnZ = 10.0f;
-    private float tileLength = 10f;
+    private float spawnZ = 9.0f;
+    private float tileLength = 9f;
     private int lastPrefabIndex = 0;
     private float safeZone = 15f; //safe zone before deleting tiles
 
