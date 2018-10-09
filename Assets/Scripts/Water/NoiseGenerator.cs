@@ -37,7 +37,9 @@ public class NoiseGenerator : MonoBehaviour {
 
         for(int i = 0; i < verticies.Length; i++)
         {
-            verticies[i].y = CalculateHeight(verticies[i].x, verticies[i].z) * power;
+            var worldPosition = transform.TransformPoint(verticies[i]);
+            verticies[i].y = CalculateHeight(worldPosition.x, worldPosition.z) * power; // uses world position instead of local position to avoid cuts in water
+            //verticies[i].y = CalculateHeight(verticies[i].x, verticies[i].z) * power;
         }
 
         mf.mesh.vertices = verticies;
