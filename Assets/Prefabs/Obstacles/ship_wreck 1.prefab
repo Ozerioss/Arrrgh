@@ -36,20 +36,11 @@ Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-<<<<<<< HEAD:Assets/Prefabs/Obstacles/ship_wreck.prefab
-  m_GameObject: {fileID: 1733165246912994}
-  m_LocalRotation: {x: 0.28618243, y: -0.01399666, z: 0.046801653, w: 0.9569291}
-  m_LocalPosition: {x: -14.893536, y: 11.178419, z: -13.493929}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
-  m_Children:
-  - {fileID: 4684179520187272}
-=======
   m_GameObject: {fileID: 1165726194604344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.4107644, y: -3.8950195, z: 2.5206795}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
->>>>>>> Zakaria:Assets/Prefabs/Obstacles/ship_wreck 1.prefab
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -109,11 +100,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 50
   m_Drag: 0
-<<<<<<< HEAD:Assets/Prefabs/Obstacles/ship_wreck.prefab
-  m_AngularDrag: 0
-=======
   m_AngularDrag: 0.05
->>>>>>> Zakaria:Assets/Prefabs/Obstacles/ship_wreck 1.prefab
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0

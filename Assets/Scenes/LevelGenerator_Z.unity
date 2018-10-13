@@ -669,13 +669,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f281d6bd94c1cd144a64816cf025d8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacles:
+  - {fileID: 1820064120277818, guid: a37ef9e0383311445958af27680093a0, type: 2}
+  - {fileID: 1835060420886376, guid: 3855232e52ca08c43b588e9197de0f55, type: 2}
+  - {fileID: 1152902104655708, guid: 82750efd9ef54094ca2cc258a630082e, type: 2}
+  - {fileID: 1899861912395428, guid: 62e62f1a7fa591c499515a503b7ed61d, type: 2}
+  buffs:
+  - {fileID: 1860738742830302, guid: bd570a35c87f52e48a8e31de39a7e0fe, type: 2}
   tilePrefabs:
   - {fileID: 1252182590726926, guid: 6ca1c7b9b8f5c094c8f156856c3f6329, type: 2}
-  - {fileID: 1522783213318550, guid: 88bc48d07af6f3942892fafe6f4e4cc9, type: 2}
-  - {fileID: 1177862847375424, guid: 3a7366c0cf45420458eac6dae2ede438, type: 2}
-  - {fileID: 1247557683688252, guid: 539a0e2e7642bb844bb9271104aed58a, type: 2}
-  - {fileID: 1052255085840166, guid: 7597161063b1ddb47bc0f1db69f3d6a4, type: 2}
   amountOfTiles: 7
+  xOffset: 3
 --- !u!4 &1806332406
 Transform:
   m_ObjectHideFlags: 0
