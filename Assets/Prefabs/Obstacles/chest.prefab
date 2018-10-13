@@ -36,8 +36,8 @@ GameObject:
   - component: {fileID: 4919787377422514}
   - component: {fileID: 33126425146639288}
   - component: {fileID: 23051278300539032}
-  - component: {fileID: 135241290048583596}
   - component: {fileID: 114121760887691280}
+  - component: {fileID: 65647653620298340}
   m_Layer: 0
   m_Name: chest
   m_TagString: Buff
@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1375522825807818}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.49, y: 0.52, z: -1.6499996}
+  m_LocalPosition: {x: 2.5492828, y: 0.25, z: -1.3646712}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 4919787377422514}
@@ -189,6 +189,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1987225180189850}
   m_Mesh: {fileID: 4300002, guid: 1f4139bc0d3d50f458133e8b008f2f16, type: 3}
+--- !u!65 &65647653620298340
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1611588264056022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.5759997, y: 3.3212438, z: 4.0526404}
+  m_Center: {x: 0, y: 1.6606219, z: -0.010320424}
 --- !u!114 &114121760887691280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,15 +215,4 @@ MonoBehaviour:
   pickupEffect: {fileID: 1000012909287652, guid: 3b6de610e4239524085900bace101137,
     type: 2}
   multiplier: 1.3
---- !u!135 &135241290048583596
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1611588264056022}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 4.41
-  m_Center: {x: 0, y: 2.42, z: -0.010320424}
+  healAmount: 50
