@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da40e09cbb10590418a47695f76be523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: {fileID: 0}
   maxHealth:
     baseValue: 0
   maxShield:
@@ -268,6 +269,7 @@ MonoBehaviour:
     baseValue: 0
   armor:
     baseValue: 0
+  gameManager: {fileID: 0}
 --- !u!114 &216568411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,18 +281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a52535f9ad8344b90cb961f359c63c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 5
-  maxHealth: 5
-  HeartContainer: {fileID: 0}
-  hearths:
-  - {fileID: 910778839}
-  - {fileID: 1582003883}
-  - {fileID: 2003257511}
-  - {fileID: 1034544996}
-  - {fileID: 204119837}
-  emptyHearth: {fileID: 21300000, guid: 350f2e489c1d0458db18e969f67cb28a, type: 3}
-  fullHearth: {fileID: 21300000, guid: 51cbf6e0aefa3464ba1c716d3be413aa, type: 3}
-  healthPrefab: {fileID: 0}
 --- !u!224 &672037278 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224531525107820030, guid: c23df1e1fe1e14d41a5356be0a6fec55,
@@ -439,7 +429,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4375452320351620, guid: 1da8ffb2d6d06744ab8c58799626fa31, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 4375452320351620, guid: 1da8ffb2d6d06744ab8c58799626fa31, type: 2}
       propertyPath: m_LocalPosition.y
@@ -925,6 +915,16 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: -38.700012
+      objectReference: {fileID: 0}
+    - target: {fileID: 224562623292290140, guid: c23df1e1fe1e14d41a5356be0a6fec55,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224669906134700106, guid: c23df1e1fe1e14d41a5356be0a6fec55,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c23df1e1fe1e14d41a5356be0a6fec55, type: 2}
@@ -1547,13 +1547,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f281d6bd94c1cd144a64816cf025d8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacles:
+  - {fileID: 1529673895177454, guid: f04fd4bdeada3ab4390864b14245d03a, type: 2}
+  - {fileID: 1733165246912994, guid: 7309623b083d45c4baaa5ec45fbaa822, type: 2}
+  - {fileID: 1999099752220418, guid: 21a6c55d3997f2d4ba6441d408a5f515, type: 2}
+  - {fileID: 1003473921661982, guid: b76e16354470f3c41838b3a7b7086c78, type: 2}
+  - {fileID: 1529673895177454, guid: f04fd4bdeada3ab4390864b14245d03a, type: 2}
+  buffs:
+  - {fileID: 1375522825807818, guid: b8b222f01fc224247ae4ac9b585b11c9, type: 2}
   tilePrefabs:
   - {fileID: 1252182590726926, guid: 6ca1c7b9b8f5c094c8f156856c3f6329, type: 2}
-  - {fileID: 1522783213318550, guid: 88bc48d07af6f3942892fafe6f4e4cc9, type: 2}
-  - {fileID: 1177862847375424, guid: 3a7366c0cf45420458eac6dae2ede438, type: 2}
-  - {fileID: 1247557683688252, guid: 539a0e2e7642bb844bb9271104aed58a, type: 2}
-  - {fileID: 1052255085840166, guid: 7597161063b1ddb47bc0f1db69f3d6a4, type: 2}
+  - {fileID: 1252182590726926, guid: 6ca1c7b9b8f5c094c8f156856c3f6329, type: 2}
   amountOfTiles: 7
+  xOffset: 2.8
 --- !u!4 &1806332406
 Transform:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class SpawnProbability {
 
     // One obstacle
     public static int oneObstacleMinProbability = 0;
-    public static int oneObstacleMaxProbability = 100;
+    public static int oneObstacleMaxProbability = 80;
 
     // Two obstacles
     public static int twoObstacleMinProbability = 0;

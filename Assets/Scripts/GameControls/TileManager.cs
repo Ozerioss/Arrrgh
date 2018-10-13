@@ -72,6 +72,8 @@ public class TileManager : MonoBehaviour {
         int newIndex = RandomPrefabIndex(obstacles); // get random index
         int secondIndex = RandomPrefabIndex(buffs);
 
+        List<GameObject> obstaclesActifs = new List<GameObject>();
+
         int probability = Random.Range(0, 100);
 
         if(indexPrefab == -1)
@@ -84,6 +86,7 @@ public class TileManager : MonoBehaviour {
             for(int i = 0; i < obstacleNbr; i++)
             {
                 goObstacle = Instantiate(obstacles[newIndex], new Vector3(GetRandomX(xValues), 0.8f, spawnZ), obstacles[newIndex].transform.rotation); //Gets a random obstacle and spawns it at random position
+                obstaclesActifs.Add(goObstacle);
             }
 
             if (probability >= buffMinProbability && probability <= buffMaxProbability)
