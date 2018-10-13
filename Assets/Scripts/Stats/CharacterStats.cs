@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
 
-    
     public int currentHealth { get; private set; } // get from all classes but set only from here
     public int currentShield { get; private set; }
 
-    public Health hp;
+    public Health hpUI;
     public Stat maxHealth;
     public Stat maxShield;
 
@@ -16,45 +15,39 @@ public class CharacterStats : MonoBehaviour {
     public Stat damage;
     public Stat armor;
 
-
-    private void Awake()
-    {
+    private void Awake() {
         currentHealth = maxHealth.GetValue();
         currentShield = maxShield.GetValue();
     }
 
-    private void Update()
-    {
+    private void Update() {
         //if(Input.GetKeyDown(KeyCode.T))
         //{
         //    TakeDamage(10);
         //}
     }
 
-    public void TakeDamage(int damage)
-    {
+    public void TakeDamage(int damage) {
         // To do add shield logic + modifier logic
         /*damage -= armor.GetValue();
 
         damage = Mathf.Clamp(damage, 0, int.MaxValue); // so that damage is never negative*/
 
         currentHealth -= damage;
-        hp.currentHealth = currentHealth;
-        if(currentHealth <= 0)
-        {
+        if (hpUI != null)
+            hpUI.currentHealth = currentHealth;
+            
+        if (currentHealth <= 0) {
             Die();
         }
     }
 
-    public void Heal(int heal)
-    {
+    public void Heal(int heal) {
         currentHealth += heal;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth.GetValue());
     }
 
-
-    public virtual void Die()
-    {
+    public virtual void Die() {
         Debug.Log("U ded");
     }
 }
