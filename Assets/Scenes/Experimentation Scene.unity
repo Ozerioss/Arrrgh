@@ -228,8 +228,8 @@ MonoBehaviour:
   - {fileID: 1733165246912994, guid: 7309623b083d45c4baaa5ec45fbaa822, type: 2}
   - {fileID: 1137432031391642, guid: b76e16354470f3c41838b3a7b7086c78, type: 2}
   buffs:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1375522825807818, guid: b8b222f01fc224247ae4ac9b585b11c9, type: 2}
+  - {fileID: 1576395185840342, guid: 1189c8be52268b945b834f7952e6666e, type: 2}
   tilePrefabs:
   - {fileID: 140822913}
   - {fileID: 140822913}
@@ -443,6 +443,10 @@ Prefab:
     - target: {fileID: 4141718007909628, guid: 3520c996447f66142a3cb3ddd886e3d1, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1900117416023662, guid: 3520c996447f66142a3cb3ddd886e3d1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3520c996447f66142a3cb3ddd886e3d1, type: 2}

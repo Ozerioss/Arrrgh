@@ -22,9 +22,18 @@ public class TileManager : MonoBehaviour {
     private float[] xValues = new float[3];
 
     private List<GameObject> activeTiles;
+    // Probability for one obstacle
+    private int oneObstacleMinProbability = SpawnProbability.oneObstacleMinProbability;
+    private int oneObstacleMaxProbability = SpawnProbability.oneObstacleMaxProbability;
+    // Probability for two obstacles
+    private int twoObstacleMinProbability = SpawnProbability.twoObstacleMinProbability;
+    private int twoObstacleMaxProbability = SpawnProbability.twoObstacleMaxProbability;
+    // Probability for buff
+    private int buffMaxProbability = SpawnProbability.buffMaxProbability;
+    private int buffMinProbability = SpawnProbability.buffMinProbability;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         xValues = new float[] {-xOffset, (-xOffset + xOffset) / 2, xOffset }; //Position de l'objet sur X
         activeTiles = new List<GameObject>();
@@ -62,16 +71,39 @@ public class TileManager : MonoBehaviour {
         GameObject goBuff;
         int newIndex = RandomPrefabIndex(obstacles); // get random index
         int secondIndex = RandomPrefabIndex(buffs);
+
+        int probability = Random.Range(0, 100);
+
         if(indexPrefab == -1)
         {
             go = Instantiate(tilePrefabs[0]) as GameObject; //Instantiate random tile from list ( for now only empty tile )
-            goObstacle = Instantiate(obstacles[newIndex], new Vector3(GetRandomX(xValues), 0.8f, spawnZ), obstacles[newIndex].transform.rotation); //Gets a random obstacle and spawns it at random position
-            goBuff = Instantiate(buffs[secondIndex], new Vector3(GetRandomX(xValues), 0.8f, spawnZ), buffs[secondIndex].transform.rotation);
+            
+            int obstacleNbr = GetNumberOfObstacles();
+
+            // Spawn obstacles
+            for(int i = 0; i < obstacleNbr; i++)
+            {
+                goObstacle = Instantiate(obstacles[newIndex], new Vector3(GetRandomX(xValues), 0.8f, spawnZ), obstacles[newIndex].transform.rotation); //Gets a random obstacle and spawns it at random position
+            }
+
+            if (probability >= buffMinProbability && probability <= buffMaxProbability)
+            {
+                if(obstacleNbr > 1)
+                {
+                    Instantiate(buffs[secondIndex], new Vector3(xValues[penultimateRandomX], 0.8f, spawnZ), buffs[secondIndex].transform.rotation);
+                }
+                else
+                {
+                    goBuff = Instantiate(buffs[secondIndex], new Vector3(GetRandomX(xValues), 0.8f, spawnZ), buffs[secondIndex].transform.rotation);
+                }
+            }
+            
         }
         else
         {
             go = Instantiate(tilePrefabs[0]);
             goObstacle = null;
+            goBuff = null;
         }
 
         go.transform.SetParent(transform);
@@ -81,6 +113,8 @@ public class TileManager : MonoBehaviour {
         activeTiles.Add(go);
     }
 
+
+    // To do object pooling
 
     void DeleteTile()
     {
@@ -107,10 +141,12 @@ public class TileManager : MonoBehaviour {
         return randomIndex;
     }
 
-    
+    private int penultimateRandomX = 0;
+
     private float GetRandomX(float[] xValues)
     {
         int randomX = lastRandomX;
+        penultimateRandomX = lastRandomX;
         while(randomX == lastRandomX)
         {
             randomX = Random.Range(0, xValues.Length);
@@ -119,8 +155,32 @@ public class TileManager : MonoBehaviour {
         return xValues[randomX];
     }
 
-    private void GetRatio()
+    private int GetNumberOfObstacles()
     {
         //Determines how many obstacles and buffs per tile
+        int objectsToSpawn = 0;
+        int probability = Random.Range(0, 100);
+
+
+        for (int i = 0; i < 2; i++)
+        {
+            if (probability >= oneObstacleMinProbability && probability <= oneObstacleMaxProbability)
+            {
+                Debug.Log("One obstacle");
+                objectsToSpawn++;
+                break;
+            }
+
+            if (probability >= twoObstacleMinProbability && probability <= twoObstacleMaxProbability)
+            {
+                Debug.Log("TWO OBSTACLES");
+                objectsToSpawn += 2;
+                break;
+            }
+
+        }
+
+        return objectsToSpawn;
+        
     }
 }
