@@ -9,7 +9,7 @@ public class TileManager : MonoBehaviour {
     public GameObject[] tilePrefabs;
     public int amountOfTiles = 10;
     public float xOffset = 3;
-    
+    public GameObject endLevel;
 
 
     private Transform playerTransform;
@@ -31,6 +31,8 @@ public class TileManager : MonoBehaviour {
     // Probability for buff
     private int buffMaxProbability = SpawnProbability.buffMaxProbability;
     private int buffMinProbability = SpawnProbability.buffMinProbability;
+
+
 
     // Use this for initialization
     void Start ()
