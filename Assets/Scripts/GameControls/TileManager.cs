@@ -16,6 +16,7 @@ public class TileManager : MonoBehaviour {
     private float spawnZ = 9.0f;
     private float tileLength = 9f;
     private int lastPrefabIndex = 0;
+    private int lastRandomX = 0;
     private float safeZone = 15f; //safe zone before deleting tiles
 
     private float[] xValues = new float[3];
@@ -32,7 +33,7 @@ public class TileManager : MonoBehaviour {
         for(int i = 0; i < amountOfTiles; i++)
         {
             // spawn safe tiles ( no obstacle )
-            if (i < 2)
+            if (i <= 2)
             {
                 SpawnTile(0);
             }
@@ -58,12 +59,14 @@ public class TileManager : MonoBehaviour {
     {
         GameObject go;
         GameObject goObstacle;
+        GameObject goBuff;
         int newIndex = RandomPrefabIndex(obstacles); // get random index
+        int secondIndex = RandomPrefabIndex(buffs);
         if(indexPrefab == -1)
         {
-            go = Instantiate(tilePrefabs[0]) as GameObject; //Instantiate random tile from list
-            //goObstacle = Instantiate(obstacles[newIndex]) as GameObject;
-            goObstacle = Instantiate(obstacles[newIndex], new Vector3(GetRandomX(xValues), 0.8f, spawnZ), obstacles[newIndex].transform.rotation);
+            go = Instantiate(tilePrefabs[0]) as GameObject; //Instantiate random tile from list ( for now only empty tile )
+            goObstacle = Instantiate(obstacles[newIndex], new Vector3(GetRandomX(xValues), 0.8f, spawnZ), obstacles[newIndex].transform.rotation); //Gets a random obstacle and spawns it at random position
+            goBuff = Instantiate(buffs[secondIndex], new Vector3(GetRandomX(xValues), 0.8f, spawnZ), buffs[secondIndex].transform.rotation);
         }
         else
         {
@@ -104,9 +107,20 @@ public class TileManager : MonoBehaviour {
         return randomIndex;
     }
 
+    
     private float GetRandomX(float[] xValues)
     {
-        int randomXIndex = Random.Range(0, xValues.Length);
-        return xValues[randomXIndex];
+        int randomX = lastRandomX;
+        while(randomX == lastRandomX)
+        {
+            randomX = Random.Range(0, xValues.Length);
+        }
+        lastRandomX = randomX;
+        return xValues[randomX];
+    }
+
+    private void GetRatio()
+    {
+        //Determines how many obstacles and buffs per tile
     }
 }
